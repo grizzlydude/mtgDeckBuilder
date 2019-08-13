@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class DeckMake extends Component {
+export default class Nav extends Component {
     render() {
         return (
             <div>
-                <h1>Make A Deck</h1>
+                <h1>Nav Bar</h1>
             </div>
         )
     }
