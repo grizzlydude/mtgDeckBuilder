@@ -4,6 +4,11 @@ const express = require('express')
 const app = express()
 const session = require('express-session')
 const massive = require('massive')
+
+// importing controllers
+const authCtrl = require('./controllers/authController')
+
+// constants for server set up
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const PORT = SERVER_PORT || 5555
 
@@ -21,6 +26,8 @@ app.use(session({
 }))
 
 // End Points Auth
+app.post('/auth/login', authCtrl.login)
+app.post('/auth/register', authCtrl.register)
 
 // End points for Cards
 

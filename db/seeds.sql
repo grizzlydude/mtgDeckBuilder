@@ -14,6 +14,11 @@ CREATE TABLE mtg_decks (
   card_id VARCHAR(100) 
 );
 
+CREATE TABLE mtg_credentials (
+	user_id INTEGER REFERENCES mtg_users(user_id),
+  hash TEXT
+);
+
 -- dummy data
 INSERT INTO mtg_users (username, email, password, user_image)
 VALUES ('Grizzly', 'grizzly@gmail.com', 'sweet', 'https://thenypost.files.wordpress.com/2019/04/grizzly-bear.jpg?quality=90&strip=all&w=618&h=410&crop=1');
