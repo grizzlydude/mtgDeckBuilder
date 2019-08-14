@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { setUser } from '../redux/reducer'
+import { connect } from 'react-redux'
+import './Login.css'
 
-export default class Login extends Component {
+class Login extends Component {
     state = {
-        usernameEmailInput: '',
-        passwordInput: ''
+        username: '',
+        password: ''
     }
 
     handleChange(e, key) {
@@ -17,44 +20,43 @@ export default class Login extends Component {
     logIn = () => {
         console.log(this.state)
         console.log('')
-        const { username, email, password } = this.state
+        const { username, password } = this.state
         console.log('username: ', username)
         console.log('')
-        axios.post('/auth/login', { username, email, password })
+        axios.post('/auth/login', { username, password })
             .then(res => {
-                console.log('logging In')
+                this.props.setUser({ username, password })
+                this.props.history.push('/')
             }).catch(err => {
                 alert('Username/Email and/or Password does not match. Try another Username/email or password')
             })
     }
-    // login = () => {
-    //     console.log(this.state)
-    //     const { username, password } = this.state
-    //     console.log(username)
-    //     // currently only sending the catch err. 
-    //     axios.post('/api/auth/login', { username, password })
-    //         .then(res => {
-    //             this.props.setUser({ username, password })
-    //             this.props.history.push('/dashboard')
-    //         }).catch(err => {
-    //             alert('Username and/or Password does not exist. Try again')
-    //         })
-    //     console.log(username)
-    // }
-
 
     cancel = () => {
-        
+        this.setState({
+            username: '',
+            password: ''
+        })
     }
 
     render() {
         return (
-            <div>
-                <span>Username Or Email: <input onChange={(e) => this.handleChange(e, 'password')} type='text' /></span>
-                <span>Password: <input onChange={(e) => this.handleChange(e, 'password')} type='password' /></span>
-                <button onClick={this.logIn}>Log In</button>
-                <button onClick={this.cancel}>Cancel</button>
-            </div>
+            <body>
+                <div className='login'>
+                    <div className='image'>
+                        <img src='https://media.wizards.com/2018/images/daily/gcYrmy5q9f.png' />
+                    </div>
+                    <span>Username Or Email: <input onChange={(e) => this.handleChange(e, 'username')} type='text' /></span>
+                    <span>Password: <input onChange={(e) => this.handleChange(e, 'password')} type='password' /></span>
+                    <div className='buttons'>
+                        <button onClick={this.logIn}>Log In</button>
+                        <Link to='/'>
+                            <button onClick={this.cancel}>Cancel</button>
+                        </Link>
+                    </div>
+                </div>
+            </body>
         )
     }
 }
+export default connect(null, { setUser })(Login)

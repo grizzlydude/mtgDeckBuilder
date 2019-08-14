@@ -25,6 +25,12 @@ app.use(session({
     }
 }))
 
+// Massive Set up
+massive(CONNECTION_STRING).then(db => {
+    app.set('db', db)
+    app.listen(PORT, () => console.log(`REVENGE OF THE PORT ${PORT}`))
+})
+
 // End Points Auth
 app.post('/auth/login', authCtrl.login)
 app.post('/auth/register', authCtrl.register)
@@ -32,11 +38,4 @@ app.post('/auth/register', authCtrl.register)
 // End points for Cards
 
 // End points for Decks
-
-
-// Massive Set up
-massive(CONNECTION_STRING).then(db => {
-    app.set('db', db)
-    app.listen(PORT, () => console.log(`REVENGE OF THE PORT ${PORT}`))
-})
 
