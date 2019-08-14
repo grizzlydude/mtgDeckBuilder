@@ -1,9 +1,61 @@
+/* /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}  
+
+/* Grant's Code */
 * {
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
-body{
+.loginBody{
     background: #bada55;
+    height:88vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,10 +77,10 @@ body{
 img{
     object-fit: contain;
     width: 100%;
+    height: 100%;
 }
 
 .image {
-    height: 25vh;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -41,5 +93,12 @@ img{
     margin-top: 5px; 
 }
 
-
+@media(min-width: 1000px) {
+    .image {
+        max-height: 30vh;
+    }
+    .login {
+        width: 60vw;
+    }
+}
 

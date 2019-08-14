@@ -1,6 +1,7 @@
 // inital state
 const intialState = {
-    usernameEmail: '',
+    username: '',
+    // email: '',
     password: '',
     userid: 0
 }

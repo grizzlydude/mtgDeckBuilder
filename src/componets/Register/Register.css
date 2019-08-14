@@ -47,7 +47,57 @@ table {
 	border-spacing: 0;
 }
 
-.App {
-  text-align: center;
+/* Grant's Code */
+* {
+    box-sizing: border-box;
 }
 
+.registerBody{
+    background: red;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh; 
+}
+  
+.login {
+    background: white; 
+    box-shadow: 5px 5px  lightgray;
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.buttons{
+    width: 20vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 5px; 
+}
+
+@media(min-width: 1000px) {
+    .image {
+        max-height: 30vh;
+    }
+    .login {
+        width: 60vw;
+    }
+}

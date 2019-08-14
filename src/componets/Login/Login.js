@@ -41,10 +41,10 @@ class Login extends Component {
 
     render() {
         return (
-            <body>
+            <body className='loginBody'>
                 <div className='login'>
                     <div className='image'>
-                        <img src='https://media.wizards.com/2018/images/daily/gcYrmy5q9f.png' />
+                        <img src='https://media.wizards.com/2018/images/daily/gcYrmy5q9f.png' alt='Magic the gathering logo' />
                     </div>
                     <span>Username Or Email: <input onChange={(e) => this.handleChange(e, 'username')} type='text' /></span>
                     <span>Password: <input onChange={(e) => this.handleChange(e, 'password')} type='password' /></span>
