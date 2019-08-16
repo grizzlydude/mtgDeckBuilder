@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    border: 1px solid red;
+    height: 50px;
+    display: flex;
+    flex-direction: reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+.search {
+
+}
+
+.loginAndRegister {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}

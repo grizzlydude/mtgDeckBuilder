@@ -7,6 +7,8 @@ const massive = require('massive')
 
 // importing controllers
 const authCtrl = require('./controllers/authController')
+const cardCtrl = require('./controllers/cardController')
+const deckCtrl = require('./controllers/deckController')
 
 // constants for server set up
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
@@ -36,6 +38,15 @@ app.post('/auth/login', authCtrl.login)
 app.post('/auth/register', authCtrl.register)
 
 // End points for Cards
+app.get('/api/cards', cardCtrl.allCards)
+app.get('/api/card/:id', cardCtrl.getSingleCard)
+app.post('/api/deck', cardCtrl.addCard)
+app.delete('/api/deck', cardCtrl.removeCard)
 
 // End points for Decks
+app.get('/api/decklist', deckCtrl.getAllDecks)
+app.get('/api/deck', deckCtrl.getSingleDeck)
+app.post('/api/adddeck', deckCtrl.addDeck)
+app.put('/api/editdeck', deckCtrl.editDeck)
+app.delete('/api/deck', deckCtrl.deleteDeck)
 
