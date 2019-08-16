@@ -39,9 +39,9 @@ app.post('/auth/register', authCtrl.register)
 
 // End points for Cards
 app.get('/api/cards', cardCtrl.allCards)
-app.get('/api/card/:id', cardCtrl.getSingleCard)
-app.post('/api/deck', cardCtrl.addCard)
-app.delete('/api/deck', cardCtrl.removeCard)
+app.get('/api/cards/:id', cardCtrl.getSingleCard)
+app.post('/api/cards/:id', cardCtrl.addCard)
+app.delete('/api/deck/:id', cardCtrl.removeCard)
 
 // End points for Decks
 app.get('/api/decklist', deckCtrl.getAllDecks)

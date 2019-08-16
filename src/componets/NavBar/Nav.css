@@ -12,14 +12,15 @@
     margin-top: 10px; 
 }
 
-.search {
+/* .search {
 
-}
+} */
 
 .loginAndRegister {
     border: 1px solid blue;
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
-
-}
+    margin-right: 20px;
+}   
