@@ -45,8 +45,8 @@ app.delete('/api/deck/:id', cardCtrl.removeCard)
 
 // End points for Decks
 app.get('/api/decklist', deckCtrl.getAllDecks)
-app.get('/api/deck', deckCtrl.getSingleDeck)
+app.get('/api/deck/:id', deckCtrl.getSingleDeck)
 app.post('/api/adddeck', deckCtrl.addDeck)
-app.put('/api/editdeck', deckCtrl.editDeck)
-app.delete('/api/deck', deckCtrl.deleteDeck)
+// app.put('/api/deck/:id', deckCtrl.editDeck)
+app.delete('/api/deck/:id', deckCtrl.deleteDeck)
 

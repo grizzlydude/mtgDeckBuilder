@@ -30,17 +30,18 @@ module.exports = {
         console.log('Adding Cards')
         console.log('')
         const db = req.app.get('db')
-        const { title, user_id } = req.body
+        // deconstruct values from the mtg_cards database
+        const { card_id, deck_id} = req.body
         const { id } = req.params
-        const addingToDeck = await db.insert_deck([title, user_id, id])
+        const addingToDeck = await db.insert_card([id, deck_id])
         res.sendStatus(200)
     },
     removeCard: async (req, res) => {
         console.log('Removing Cards')
         console.log('')
         const db = req.app.get('db')
-        const { title, user_id, card_id } = req.body
-        const deleteFromDeck = await db.delete_card_deck([card_id])
+        const { card_id, deck_id } = req.body
+        const deleteFromDeck = await db.delete_card([card_id, deck_id])
         res.sendStatus(200)
     }
 }
