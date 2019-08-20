@@ -11,13 +11,19 @@ CREATE TABLE mtg_decks (
 	deck_id SERIAL PRIMARY KEY,
   title TEXT, 
   user_id INTEGER REFERENCES mtg_users(user_id),
-  card_id VARCHAR(100) 
 );
 
 CREATE TABLE mtg_credentials (
 	user_id INTEGER REFERENCES mtg_users(user_id),
   hash TEXT
 );
+
+CREATE TABLE mtg_cards (
+	card_id VARCHAR(100),
+  deck_id INTEGER REFERENCES mtg_decks(deck_id)
+);
+
+SELECT * FROM mtg_cards;
 
 -- dummy data
 INSERT INTO mtg_users (username, email, password, user_image)

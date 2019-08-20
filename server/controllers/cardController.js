@@ -4,7 +4,7 @@ module.exports = {
     allCards: (req, res) => {
         console.log('All Cards')
         console.log('')
-        axios.get('https://api.magicthegathering.io/v1/cards')
+        axios.get(`https://api.magicthegathering.io/v1/cards?page=${page}`)
             .then(response => {
                 console.log(response.data)
                 console.log('')
