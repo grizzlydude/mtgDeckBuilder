@@ -13,11 +13,11 @@ export default class HomePage extends Component {
 
     componentDidMount() {
         axios.get('/api/cards').then(response => {
-            console.log('response: ', response.data)
+            // console.log('response: ', response.data)
             this.setState({
-                cardDisplay: response.data
+                cardDisplay: response.data.cards
             })
-            console.log('cardDisplay: ', this.state.cardDisplay)
+            // console.log('cardDisplay: ', this.state.cardDisplay)
         })
     }
 
@@ -27,15 +27,12 @@ export default class HomePage extends Component {
         })
         return (
             <div>
-                <h1>Home Page</h1>
-                    <div className='cardDisplay'>
-                        {/* displays all cards */}
-                        {/* {this.state.cardDisplay.name} */}
-                        {cards}
-                        {/* creates a loading circle while waiting for response.  */}
-                        <div class="loader"></div>
-                        {/* {this.state.cardDisplay} */}
-                    </div>
+                <div className='cardDisplay'>
+                    {/* displays all cards */}
+                    {cards}
+                    {/* creates a loading circle while waiting for response.  */}
+                    <div className="loader"></div>
+                </div>
             </div>
         )
     }

@@ -6,7 +6,10 @@
     border: 1px solid blue;
     height: 90vh;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .loader {

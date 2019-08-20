@@ -1,22 +1,27 @@
 import React, { Component } from 'react'
 import './Nav.css'
-
+import { Menu } from 'grommet-icons'
+import { Link } from 'react-router-dom'
+ 
 class Nav extends Component {
     render() {
         return (
-            <div className='navbar'>
-                <h3>Home</h3>
-                <div className='search'>
-                    <span>Search: <input /></span>
-                    <button>Search</button>
+            <nav>
+                <div className='navbar'>
+                    <li>Home</li>
+                    <div className='search'>
+                        <input placeholder='Search' />
+                        <button className='searchButton'>Search</button>
+                    </div>
+                    <li>Deck List</li>
+                    <li>Contact</li>
+                    <div className='loginAndRegister'>
+                        <li>Login</li>
+                        <li>Register</li>
+                    </div>
+                    <Menu className='menuIcon' color='red' size='xlarge' />
                 </div>
-                <h3>Deck List</h3>
-                <h3>Contact</h3>
-                <div className='loginAndRegister'>
-                    <h3>Login</h3>
-                    <h3>Register</h3>
-                </div>
-            </div>
+            </nav>
         )
     }
 }
