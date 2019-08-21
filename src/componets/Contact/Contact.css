@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+.contactContainer {
+    border: 1px solid red;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+/* .contentMail {
+    height: 100%;
+    width: 100%; */
+/* } */
+
+.mailingButtons {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}

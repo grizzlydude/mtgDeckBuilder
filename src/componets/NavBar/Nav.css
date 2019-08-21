@@ -63,6 +63,7 @@ table {
 }
 
 li {
+    color: white;
     list-style: none;
     margin: 0 1rem;
     transition: .3s;
@@ -95,7 +96,7 @@ li:hover {
     margin-right: 1rem;
 }
 
-@media(min-width: 1000px) {
+@media(max-width: 1000px) {
     .menuIcon{
         display: inline-block !important;
     }

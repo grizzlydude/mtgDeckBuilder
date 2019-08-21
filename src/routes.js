@@ -6,6 +6,7 @@ import HomePage from './componets/HomePage/HomePage'
 import DeckList from './componets/DeckList/DeckList'
 import DeckMake from './componets/DeckMaker/DeckMake'
 import SingleDeck from './componets/SingleDeck/SingleDeck'
+import Contact from './componets/Contact/Contact'
 
 export default (
     <Switch>
@@ -15,5 +16,6 @@ export default (
         <Route path='/api/decklist' component={DeckList}/>
         <Route path='/api/singledeck' component={SingleDeck}/>
         <Route path='/api/makedeck' component={DeckMake}/>
+        <Route path='/contact' component={Contact} /> 
     </Switch>
 )

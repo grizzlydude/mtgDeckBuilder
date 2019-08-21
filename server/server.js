@@ -10,12 +10,17 @@ const authCtrl = require('./controllers/authController')
 const cardCtrl = require('./controllers/cardController')
 const deckCtrl = require('./controllers/deckController')
 
+// importing the controller for mailing functions
+const mailing = require('./controllers/mailerController')
+
 // constants for server set up
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const PORT = SERVER_PORT || 5555
 
 // middleWare
 app.use(express.json())
+
+app.post('/mailing', mailing.sendMail)
 
 // Sessions
 app.use(session({
